@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %} <!-- New line -->
+
+    <head>
+        <title>Restaurante</title>
+    </head>
+
+    <body>
+        <h1>Restaurante says...</h1>
+		<a href="/restaurante/register/">Register Here</a>
+		<a href="/restaurante/registro/">Registro</a>
+        {% if bares %}
+            <ul>
+                {% for bar in bares %}
+                <li><a href="/restaurante/bar/{{ bar.slug }}">{{ bar.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>Lo siento, no hay bares.</strong>
+        {% endif %}
+        <a href="/restaurante/about/">About</a><br />
+		<img src="{% static "images/prueba.jpg" %}" alt="Picture of Restaurante" /> <!-- New line -->
+    </body>
+
+</html>
