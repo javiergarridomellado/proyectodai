@@ -1,0 +1,27 @@
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema 
+    apt: update_cache=yes upgrade=dist  
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Postgre
+    command: sudo easy_install pip
+    command: sudo pip install --upgrade pip
+    command: sudo apt-get install -y python-dev libpq-dev python-psycopg2
+  - name: Obtener aplicacion git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+
+
