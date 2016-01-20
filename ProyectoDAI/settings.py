@@ -92,7 +92,7 @@ TEMPLATE_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'vagrant',
         'USER': 'vagrant',
         'HOST': '',
         'PORT': '',
