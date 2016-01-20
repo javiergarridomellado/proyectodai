@@ -91,13 +91,15 @@ TEMPLATE_DIRS = (
 #}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vagrant',
-        'USER': 'vagrant',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'USER': 'root',
+        'PASSWORD':'',
+        'HOST': '',
+        'PORT': '',
     }
 }
+
 #ON_HEROKU = os.environ.get('PORT')
 #if ON_HEROKU:
 #	DATABASE_URL='postgres://kytzveedsclzaf:eIJAAuElYvSxPK-vmSdXG9Hjv8@ec2-107-21-219-235.compute-1.amazonaws.com:5432/df9sfr7a9b8vjf'
