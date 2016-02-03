@@ -73,7 +73,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+ON_HEROKU = os.environ.get('PORT')
+if ON_HEROKU:
+	DATABASE_URL='postgres://kytzveedsclzaf:eIJAAuElYvSxPK-vmSdXG9Hjv8@ec2-107-21-219-235.compute-1.amazonaws.com:5432/df9sfr7a9b8vjf'
+	DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
