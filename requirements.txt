@@ -19,5 +19,5 @@ requests-futures==0.9.5
 static3==0.6.1
 wheel==0.26.0
 whitenoise==2.0.4
-
+django-bootstrap-toolkit==2.15.0
 
