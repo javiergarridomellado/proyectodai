@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import dj_database_url
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import django
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +26,7 @@ SECRET_KEY = '26*swq94+rg+-2tc2es6j&d#&(g4@@xe7vh1hu1)6*z^v@pd2q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = True
 
 #ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = []
@@ -46,11 +47,9 @@ INSTALLED_APPS = (
 	'rest_framework',
 	'restaurante',
 	'easy_maps',
-    'bootstrapform',
-    'bootstrap_toolkit',
 )
 
-import django
+
 
 if django.VERSION < (1, 7):
     INSTALLED_APPS += (
@@ -78,12 +77,7 @@ WSGI_APPLICATION = 'ProyectoDAI.wsgi.application'
 #TEMPLATE_DIRS = ('ProyectoDAI/restaurante/',)
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    TEMPLATE_PATH,
-)
+TEMPLATE_DIRS = ( TEMPLATE_PATH,)
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -101,7 +95,7 @@ if ON_HEROKU:
 
 
 
-STATIC_ROOT = 'staticfiles'
+#STATIC_ROOT = 'staticfiles'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
