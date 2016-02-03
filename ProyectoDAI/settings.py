@@ -77,19 +77,12 @@ WSGI_APPLICATION = 'ProyectoDAI.wsgi.application'
 
 #TEMPLATE_DIRS = ('ProyectoDAI/restaurante/',)
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_PATH],
-        'APP_DIRS': True,
-        'OPTIONS': {},
-    },
-]
-#TEMPLATE_DIRS = (
+
+TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #TEMPLATE_PATH,
+    TEMPLATE_PATH,
 )
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
